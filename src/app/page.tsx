@@ -1,101 +1,385 @@
-import Image from "next/image";
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+import type { Metadata } from 'next'
+import Link from 'next/link';
+export const metadata: Metadata = {
+  title: 'Trang chủ - ECO Shop',
+  description: 'ECO Shop',
+}
 
-export default function Home() {
+const favorites = [
+  {
+    id: 1,
+    name: 'Black Basic Tee',
+    price: '$32',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/home-page-03-favorite-01.jpg',
+    imageAlt: "Model wearing women's black cotton crewneck tee.",
+  },
+  {
+    id: 2,
+    name: 'Off-White Basic Tee',
+    price: '$32',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/home-page-03-favorite-02.jpg',
+    imageAlt: "Model wearing women's off-white cotton crewneck tee.",
+  },
+  {
+    id: 3,
+    name: 'Mountains Artwork Tee',
+    price: '$36',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/home-page-03-favorite-03.jpg',
+    imageAlt:
+      "Model wearing women's burgundy red crewneck artwork tee with small white triangle overlapping larger black triangle.",
+  },
+]
+
+export default function MainPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-white">
+      <header className="relative overflow-hidden">
+        {/* Hero section */}
+        <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+          <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+            <div className="sm:max-w-lg">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Summer styles are finally here
+              </h1>
+              <p className="mt-4 text-xl text-gray-500">
+                This year, our new summer collection will shelter you from the harsh elements of a world that doesn't
+                care if you live or die.
+              </p>
+            </div>
+            <div>
+              <div className="mt-10">
+                {/* Decorative image grid */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
+                >
+                  <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                    <div className="flex items-center space-x-6 lg:space-x-8">
+                      <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                        <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                <Link
+                  href="#"
+                  className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+                >
+                  Shop Collection
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
+      </header>
+
+      <main>
+        {/* Category section */}
+        <section aria-labelledby="category-heading" className="bg-gray-50">
+          <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+            <div className="sm:flex sm:items-baseline sm:justify-between">
+              <h2 id="category-heading" className="text-2xl font-bold tracking-tight text-gray-900">
+                Shop by Category
+              </h2>
+              <Link href="/category" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+                Browse all categories
+                <span aria-hidden="true"> &rarr;</span>
+              </Link>
+            </div>
+
+            <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
+              <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2">
+                <img
+                  alt="Two models wearing women's black cotton crewneck tee and off-white cotton crewneck tee."
+                  src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-featured-category.jpg"
+                  className="object-cover object-center group-hover:opacity-75"
+                />
+                <div aria-hidden="true" className="bg-gradient-to-b from-transparent to-black opacity-50" />
+                <div className="flex items-end p-6">
+                  <div>
+                    <h3 className="font-semibold text-white">
+                      <Link href="#">
+                        <span className="absolute inset-0" />
+                        New Arrivals
+                      </Link>
+                    </h3>
+                    <p aria-hidden="true" className="mt-1 text-sm text-white">
+                      Shop now
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg sm:aspect-none sm:relative sm:h-full">
+                <img
+                  alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
+                  src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-01.jpg"
+                  className="object-cover object-center group-hover:opacity-75 sm:absolute sm:inset-0 sm:h-full sm:w-full"
+                />
+                <div
+                  aria-hidden="true"
+                  className="bg-gradient-to-b from-transparent to-black opacity-50 sm:absolute sm:inset-0"
+                />
+                <div className="flex items-end p-6 sm:absolute sm:inset-0">
+                  <div>
+                    <h3 className="font-semibold text-white">
+                      <Link href="#">
+                        <span className="absolute inset-0" />
+                        Accessories
+                      </Link>
+                    </h3>
+                    <p aria-hidden="true" className="mt-1 text-sm text-white">
+                      Shop now
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg sm:aspect-none sm:relative sm:h-full">
+                <img
+                  alt="Walnut desk organizer set with white modular trays, next to porcelain mug on wooden desk."
+                  src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-02.jpg"
+                  className="object-cover object-center group-hover:opacity-75 sm:absolute sm:inset-0 sm:h-full sm:w-full"
+                />
+                <div
+                  aria-hidden="true"
+                  className="bg-gradient-to-b from-transparent to-black opacity-50 sm:absolute sm:inset-0"
+                />
+                <div className="flex items-end p-6 sm:absolute sm:inset-0">
+                  <div>
+                    <h3 className="font-semibold text-white">
+                      <Link href="#">
+                        <span className="absolute inset-0" />
+                        Workspace
+                      </Link>
+                    </h3>
+                    <p aria-hidden="true" className="mt-1 text-sm text-white">
+                      Shop now
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 sm:hidden">
+              <Link href="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+                Browse all categories
+                <span aria-hidden="true"> &rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured section */}
+        <section aria-labelledby="cause-heading">
+          <div className="relative bg-gray-800 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
+            <div className="absolute inset-0 overflow-hidden">
+              <img
+                alt=""
+                src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-feature-section-full-width.jpg"
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <div aria-hidden="true" className="absolute inset-0 bg-gray-900 bg-opacity-50" />
+            <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+              <h2 id="cause-heading" className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Long-term thinking
+              </h2>
+              <p className="mt-3 text-xl text-white">
+                We're committed to responsible, sustainable, and ethical manufacturing. Our small-scale approach allows
+                us to focus on quality and reduce our impact. We're doing our best to delay the inevitable heat-death of
+                the universe.
+              </p>
+              <Link
+                href="#"
+                className="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
+              >
+                Read our story
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Favorites section */}
+        <section aria-labelledby="favorites-heading">
+          <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+            <div className="sm:flex sm:items-baseline sm:justify-between">
+              <h2 id="favorites-heading" className="text-2xl font-bold tracking-tight text-gray-900">
+                Our Favorites
+              </h2>
+              <Link href="#" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+                Browse all favorites
+                <span aria-hidden="true"> &rarr;</span>
+              </Link>
+            </div>
+
+            <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-0 lg:gap-x-8">
+              {favorites.map((favorite) => (
+                <div key={favorite.id} className="group relative">
+                  <div className="h-96 w-full overflow-hidden rounded-lg sm:aspect-h-3 sm:aspect-w-2 group-hover:opacity-75 sm:h-auto">
+                    <img
+                      alt={favorite.imageAlt}
+                      src={favorite.imageSrc}
+                      className="h-full w-full object-cover object-center"
+                    />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold text-gray-900">
+                    <Link href={favorite.href}>
+                      <span className="absolute inset-0" />
+                      {favorite.name}
+                    </Link>
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500">{favorite.price}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 sm:hidden">
+              <Link href="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+                Browse all favorites
+                <span aria-hidden="true"> &rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA section */}
+        <section aria-labelledby="sale-heading">
+          <div className="overflow-hidden pt-32 sm:pt-14">
+            <div className="bg-gray-800">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="relative pb-16 pt-48 sm:pb-24">
+                  <div>
+                    <h2 id="sale-heading" className="text-4xl font-bold tracking-tight text-white md:text-5xl">
+                      Final Stock.
+                      <br />
+                      Up to 50% off.
+                    </h2>
+                    <div className="mt-6 text-base">
+                      <Link href="#" className="font-semibold text-white">
+                        Shop the sale
+                        <span aria-hidden="true"> &rarr;</span>
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="absolute -top-32 left-1/2 -translate-x-1/2 transform sm:top-6 sm:translate-x-0">
+                    <div className="ml-24 flex min-w-max space-x-6 sm:ml-3 lg:space-x-8">
+                      <div className="flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                        <div className="flex-shrink-0">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-01.jpg"
+                            className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                          />
+                        </div>
+
+                        <div className="mt-6 flex-shrink-0 sm:mt-0">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-02.jpg"
+                            className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex space-x-6 sm:-mt-20 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                        <div className="flex-shrink-0">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-favorite-01.jpg"
+                            className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                          />
+                        </div>
+
+                        <div className="mt-6 flex-shrink-0 sm:mt-0">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-favorite-02.jpg"
+                            className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                        <div className="flex-shrink-0">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-01.jpg"
+                            className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                          />
+                        </div>
+
+                        <div className="mt-6 flex-shrink-0 sm:mt-0">
+                          <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-02.jpg"
+                            className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+  )
 }
